@@ -15,9 +15,9 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
-//        vmFunc();
-//        ftFunc();
-        oneThread(10000);
+        virtualThreadFunc(10000);
+//        flatFormThreadFunc(10000);
+//        oneThread(10000);
         long end = System.currentTimeMillis();
         System.out.println("Total execution time: " + (end - start));
 //        int result = fibonacci(10);
@@ -36,7 +36,7 @@ public class Main {
     }
 
     private static void flatFormThreadFunc(int time) throws InterruptedException {
-        try(ExecutorService es = Executors.newScheduledThreadPool(100)) {
+        try(ExecutorService es = Executors.newFixedThreadPool(100)) {
             for(int i =  0; i< time; i ++) {
                 es.submit(() -> {
                     try {
