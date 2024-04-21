@@ -1,4 +1,4 @@
-package org.example
+package org.example.entity
 
 data class School(
     val name: String,
