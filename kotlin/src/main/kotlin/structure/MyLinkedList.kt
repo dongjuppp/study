@@ -20,11 +20,15 @@ class MyLinkedList<T> {
     }
 
     fun get(index: Int): T? {
+        return getNodeAt(index)?.getValue()
+    }
+
+    private fun getNodeAt(index: Int): MyNode<T>? {
         var result: MyNode<T>? = head
         for(i in 0 until index) {
             result = result?.getNext()
         }
-        return result?.getValue()
+        return result
     }
 
     fun size(): Int {
@@ -32,7 +36,16 @@ class MyLinkedList<T> {
     }
 
     fun removeAt(index: Int) {
-        // TODO 삭제 기능
+        if(index == 0) {
+            head = head?.getNext()
+            if(head == null) size = 0
+        } else {
+            val target = getNodeAt(index)
+            val prev = target?.getPrev()
+            val next= target?.getNext()
+            prev?.link(next)
+            if(prev != null) size --
+        }
     }
 
     fun sort() {
