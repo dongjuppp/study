@@ -2,6 +2,11 @@ spring:
   config:
     activate:
       on-profile: local
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
   datasource:
     hikari:
       username: dongju
@@ -12,7 +17,4 @@ spring:
 
 logging:
   level:
-    com:
-      zaxxer:
-        hikari:
-          HikariConfig: DEBUG
+    com.zaxxer.hikari.HikariConfig: DEBUG
