@@ -30,6 +30,7 @@ class DbConfig {
             setProperty("username", username)
             setProperty("jdbcUrl", jdbcUrl)
             setProperty("driverClassName", driverClassName)
+            setProperty("maximumPoolSize", "90")
         }
         return HikariConfig(properties)
     }

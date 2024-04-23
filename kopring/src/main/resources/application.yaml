@@ -9,3 +9,10 @@ spring:
       #            jdbc-url: jdbc:mysql://host.docker.internal:3306/fake_book
       jdbc-url: jdbc:mysql://localhost:3306/study
       driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: DEBUG
