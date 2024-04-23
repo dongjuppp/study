@@ -4,8 +4,7 @@ import jakarta.persistence.*
 import lombok.Getter
 import org.springframework.data.convert.EntityConverter
 
-@Entity
-@Getter
+@Entity(name = "my_user")
 class User(name: String, gender: Gender, job: String) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
